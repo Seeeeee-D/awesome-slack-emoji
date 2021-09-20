@@ -76,7 +76,7 @@ if __name__ == "__main__":
     json_load = load_json(args.folder_name)
     emoji_jsons = get_emoji_json(json_load)
 
-    pbar = tqdm(enumerate(emoji_jsons), total=len(emoji_jsons))
+    pbar = tqdm(enumerate(emoji_jsons), total=len(emoji_jsons), ascii=True)
     for i, emoji_json in pbar:
         emoji = SlackEmoji(emoji_json, args.folder_name)
         emoji.download_image()
