@@ -6,7 +6,16 @@
 emoji/* に登録したいカスタムスタンプ(スタンプ:*.png or *.gif と 登録名: :foo:)を入れる!
 
 ### 自動で追加する場合
-COMING SOON
+
+半自動でカスタム絵文字をダウンロードする方法を紹介する
+1. `https://(workspace).slack.com/customize/emoji` を開き，ブラウザの開発者ツール>Network>XHRにある`emoji.adminList?...`を選択する.
+2. 選択した`emoji.adminList?...`を右クリック>Copy>Copy response でコピーをする.
+
+![img](docs/1.png)
+
+3.  2でコピーしたものを`jsons/<folder_name>.json`として保存.
+4. `python download.py --folder_name <folder_name>`を実行する
+5. `emoji/<folder_name>`に保存される!!
 
 ## slackに追加
 [Slack絵文字を一気に追加](https://qiita.com/mash76/items/88f396988278806db816)
